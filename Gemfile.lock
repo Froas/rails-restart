@@ -242,12 +242,12 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
-  pg
+  pg (= 1.2.3)
   puma (~> 5.0)
   rails (~> 7.0.3)
   selenium-webdriver
   sprockets-rails
-  sqlite3
+  sqlite3 (= 1.4.2)
   stimulus-rails
   turbo-rails
   tzinfo-data
