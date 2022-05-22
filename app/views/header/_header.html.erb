@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">My App</a>
+  <%= link_to "My app", root_path, class:"navbar-brand" %>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,8 +11,12 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/naruto">Naruto</a>
+          <%= link_to "Naruto", naruto_path, class:"nav-link"%>
         </li>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Tweets", tweets_path, class:"nav-link"%>
+        </li>gi
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
