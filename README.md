@@ -1,24 +1,18 @@
 # README
+In this project I am trying to cover railstutorial.jp and something else. Try to use my accumulated knowledge to create and deploy something interesting. It is a study project.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby 
 
-Things you may want to cover:
+Ruby on Rails
 
-* Ruby version
+GIT
 
-* System dependencies
+Heroku
 
-* Configuration
+Bootstrap 5
 
-* Database creation
+Database initialization
 
-* Database initialization
+Services (job queues, cache servers, search engines, etc.)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Deployment instructionsRails
