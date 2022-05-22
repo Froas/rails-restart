@@ -2,13 +2,13 @@
 
 <h1>Tweets</h1>
 
-<div id="tweets">
+<div id="tweets" class="card" style="width: 18rem;" >
   <% @tweets.each do |tweet| %>
-    <%= render tweet %>
+    <%= render tweet  %>
     <p>
-      <%= link_to "Show this tweet", tweet %>
+      <%= link_to "Show this tweet", tweet, class:"btn btn-outline-info" %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New tweet", new_tweet_path %>
+<%= link_to "New tweet", new_tweet_path, class:"btn btn-outline-primary" %>
