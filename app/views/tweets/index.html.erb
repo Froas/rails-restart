@@ -8,9 +8,10 @@
     <p>
       <%= link_to "Show this tweet", tweet, class:"btn btn-outline-info" %>
     </p>
+    <%= current_user %>
+    <%= tweet.user %>
+
   <% end %>
 </div>
 
-<% if user_signed_in? %>
 <%= link_to "New tweet", new_tweet_path, class:"btn btn-outline-primary" %>
-<% end %>

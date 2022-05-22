@@ -26,6 +26,10 @@
     <%= form.text_area :blog, class:"form-control"  %>
   </div>
 
+  <div class="mb-3" type="hidden">
+    <%= form.text_field :user_id, id: :tweet_user_id, value:current_user.id , type: :hidden %>
+  </div>
+
   <div class="mb-3">
     <%= form.submit :Submit, class:"btn btn-outline-dark" %>
   </div>

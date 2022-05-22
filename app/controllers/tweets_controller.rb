@@ -1,18 +1,26 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /tweets or /tweets.json
   def index
     @tweets = Tweet.all
+
   end
 
   # GET /tweets/1 or /tweets/1.json
   def show
   end
 
+  def correct_user
+    @tweet =  current_user.tweets.find_by(id: params[:id])
+    redirect_to tweets_path, notice: "Not Authorize to edit this friend" if @tweet.nil?
+  end
+
   # GET /tweets/new
   def new
-    @tweet = Tweet.new
+    #@tweet = Tweet.new
+    @tweet = current_user.tweets.build
   end
 
   # GET /tweets/1/edit
@@ -21,7 +29,8 @@ class TweetsController < ApplicationController
 
   # POST /tweets or /tweets.json
   def create
-    @tweet = Tweet.new(tweet_params)
+    #@tweet = Tweet.new(tweet_params)
+    @tweet = current_user.tweets.build(tweet_params)
 
     respond_to do |format|
       if @tweet.save
@@ -65,6 +74,6 @@ class TweetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tweet_params
-      params.require(:tweet).permit(:name, :title, :blog)
+      params.require(:tweet).permit(:name, :title, :blog, :user_id)
     end
 end
